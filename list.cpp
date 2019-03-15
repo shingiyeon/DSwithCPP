@@ -34,13 +34,13 @@ class List{
             return NULL;
         }
         Node<T>* itemAt(int position){
-            Node<T>* currentPtr = getHead();
+            Node<T>* currentPtr = head;
             int idx = 0;
             while(idx != position){
                 currentPtr = currentPtr->getNext();
                 idx++;
             }
-            return currentPtr != NULL? currentPtr->getData() : NULL;
+            return currentPtr;
         }
         void remove_one_or_no(){
             if (numOfItems == 0) return;
@@ -106,7 +106,7 @@ class List{
         }
 
         void insertHead(T x){
-            Node* newHead = new Node(x, head);
+            Node<T>* newHead = new Node<T>(x, head);
             head = newHead;
             if(tail == NULL) tail = head;
             numOfItems++;
@@ -117,7 +117,7 @@ class List{
             if(head==NULL){
                 insertHead(x); return;
             }
-            Node* newTail = new Node(x, NULL);
+            Node<T>* newTail = new Node<T>(x, NULL);
             tail->setNext(newTail);
             tail = newTail;
             numOfItems++;
@@ -133,16 +133,22 @@ class List{
             if(pos == numOfItems){
                 insertTail(x); return;
             }
-            Node* beforePtr = head;
-            Node* currentPtr = head->getNext();
+            Node<T>* beforePtr = head;
+            Node<T>* currentPtr = head->getNext();
             while(idx != pos){
                 beforePtr = currentPtr;
                 currentPtr = currentPtr->getNext();
                 idx++;
             }
-            Node* newNode = new Node(x, currentPtr);
+            Node<T>* newNode = new Node<T>(x, currentPtr);
             beforePtr->setNext(newNode);
             numOfItems++;
             return;
+        }
+        T frontValue(){
+            return head->getData();
+        }
+        T backValue(){
+            return tail->getData();
         }
 };

@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceRoot}",
+                "C:/MinGW/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "C:/MinGW/lib/gcc/mingw32/6.3.0/include/",
+                    "C:/MinGW/lib/gcc/mingw32/6.3.0/../../../../include",
+                    "C:/MinGW/lib/gcc/mingw32/6.3.0/include-fixed"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "compilerPath": "C:/mingw64/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
