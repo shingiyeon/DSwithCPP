@@ -25,5 +25,5 @@ int main(){
     l.insertAt(2, 2);
     printf("\n");
     l.printList();
-    printf("\n")
+    printf("\n");
 }
